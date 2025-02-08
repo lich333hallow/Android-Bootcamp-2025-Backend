@@ -9,6 +9,7 @@ public class UserRegisterDTO {
     private String lastName;
     private String username;
     private String password;
+    private String photoUrl;
     private String phoneNumber;
     private String organizationName;
     private String email;

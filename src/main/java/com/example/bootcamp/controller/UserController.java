@@ -56,4 +56,9 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(userRegisterDTO));
     }
 
+    @GetMapping("/user/free")
+    public ResponseEntity<List<UserDTO>> getUsersWithoutOrganization(){
+        return ResponseEntity.ok(userService.getUsersWithoutOrganization());
+    }
+
 }

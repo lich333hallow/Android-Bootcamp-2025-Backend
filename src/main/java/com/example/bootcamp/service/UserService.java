@@ -20,5 +20,7 @@ public interface UserService {
 
     Page<UserDTO> getAllUserPaginated(Pageable pageable);
 
+    List<UserDTO> getUsersWithoutOrganization();
+
     void deleteUser(Long id);
 }

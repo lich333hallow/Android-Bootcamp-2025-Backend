@@ -15,6 +15,7 @@ public class UserMapper {
         userDTO.setLastName(user.getLastName());
         userDTO.setUsername(user.getUsername());
         userDTO.setInfo(user.getInfo());
+        userDTO.setPhotoUrl(user.getPhotoUrl());
 
         if(user.getOrganization() != null){
             userDTO.setOrganizationName(user.getOrganization().getName());

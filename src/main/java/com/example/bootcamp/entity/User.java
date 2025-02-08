@@ -32,6 +32,9 @@ public class User implements UserDetails {
     @Column(name = "info")
     private String info;
 
+    @Column(name = "photoUrl")
+    private String photoUrl;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Authority> authorities;
 

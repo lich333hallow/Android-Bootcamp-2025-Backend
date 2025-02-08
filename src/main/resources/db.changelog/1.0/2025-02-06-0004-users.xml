@@ -34,6 +34,9 @@
             <column name="info" type="varchar(300)">
                 <constraints nullable="false"/>
             </column>
+            <column name="photo_url" type="varchar(300)">
+                <constraints nullable="false"/>
+            </column>
             <column name="contact_id" type="BIGINT">
                 <constraints nullable="false" foreignKeyName="fk_users_contact" referencedTableName="contact"
                              referencedColumnNames="id"/>

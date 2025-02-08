@@ -1,2 +1,3 @@
-name;second_name;last_name;login;password;info;organization_id;contact_id
-lich;hallow;333hl;lich333hallow;$2a$10$eObqG4zk7CbKPPTv0daHm.bcpK6zwyFPpjAVXOeDWrT/3TpVcxpia;someInfo;1;1
+name;second_name;last_name;login;password;info;photo_url;organization_id;contact_id
+lich;hallow;333hl;lich333hallow;$2a$10$eObqG4zk7CbKPPTv0daHm.bcpK6zwyFPpjAVXOeDWrT/3TpVcxpia;someInfo;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0uABChAQdlzfFoMEQv68JRcUZPMAGP4cZbQ&s;1;1
+ivan;ivanov;ivanovich;i@ivanov.ru;$2a$10$eObqG4zk7CbKPPTv0daHm.bcpK6zwyFPpjAVXOeDWrT/3TpVcxpia;someInformation;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMLDRlKyOti-K9IfATYsyJIwiyQnxvOw8w2526yUycVikPF4g4Ih6EUl2no4XoO6BPk5unlWn-NNn3jBMCQdWaiwDkvFwg8wmyXXyP1M;;2

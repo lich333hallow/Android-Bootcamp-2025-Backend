@@ -79,6 +79,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
         user.setAuthorities(Set.of(authority.get()));
         user.setInfo(userRegisterDTO.getInfo());
+        user.setPhotoUrl(userRegisterDTO.getPhotoUrl());
 
         Contact contact = new Contact();
         contact.setEmail(userRegisterDTO.getEmail());
@@ -106,6 +107,7 @@ public class UserServiceImpl implements UserService {
         user.setLastName(userDTO.getLastName());
         user.setUsername(userDTO.getUsername());
         user.setInfo(userDTO.getInfo());
+        user.setPhotoUrl(userDTO.getPhotoUrl());
 
         contact.setTelegramLink(userDTO.getTelegramLink());
         contact.setEmail(userDTO.getEmail());
@@ -123,6 +125,13 @@ public class UserServiceImpl implements UserService {
     public Page<UserDTO> getAllUserPaginated(Pageable pageable) {
         return userRepository.findAll(pageable)
                 .map(UserMapper::convertToUserDTO);
+    }
+
+    @Override
+    public List<UserDTO> getUsersWithoutOrganization() {
+        return userRepository.findByOrganization(null).stream()
+                .map(UserMapper::convertToUserDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
