@@ -1,4 +1,10 @@
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     <changeSet id="2025-02-06-0004-users" author="mprokhorov">
         <preConditions onFail="MARK_RAN">
             <not>
@@ -36,6 +42,10 @@
                 <constraints nullable="true" foreignKeyName="fk_users_organization" referencedTableName="organization"
                              referencedColumnNames="id"/>
             </column>
+<!--            <column>-->
+<!--                <constraints nullable="false" foreignKeyName="fk_users_usersessions" referencedTableName="user_sessions"-->
+<!--                             referencedColumnNames="id"/>-->
+<!--            </column>-->
         </createTable>
     </changeSet>
 </databaseChangeLog>
