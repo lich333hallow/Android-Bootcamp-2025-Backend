@@ -20,19 +20,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/h2-console/**").permitAll()
-//                .antMatchers("/api/1.0/register").permitAll()
-//                .antMatchers("/api/1.0/user/username/{login}").permitAll()
-//                .antMatchers("/api/1.0/user/**").hasAnyAuthority("user", "admin")
-//                .antMatchers("/api/1.0/organization").hasRole("admin")
-//                .anyRequest().authenticated()
-//                .and()
-//                .httpBasic()
-//                .and()
-//                .headers().frameOptions().disable();
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
+                .antMatchers("/api/1.0/register").permitAll()
+                .antMatchers("/api/1.0/user/username/{login}").permitAll()
+                .antMatchers("/api/1.0/user/**").hasAnyAuthority("user", "admin")
+                .antMatchers("/api/1.0/organization").hasRole("admin")
+                .anyRequest().authenticated()
+                .and()
+                .httpBasic()
+                .and()
+                .headers().frameOptions().disable();
     }
 
     @Override
