@@ -45,9 +45,8 @@ public class UserController {
     }
 
     @GetMapping("/user/username/{login}")
-    public ResponseEntity<String> getUserByLogin(@PathVariable String login){
-        UserDTO userDTO = userService.getUserByUsername(login);
-        return ResponseEntity.ok("User " + userDTO.getUsername() + " is registered");
+    public ResponseEntity<UserDTO> getUserByLogin(@PathVariable String login){
+        return ResponseEntity.ok(userService.getUserByUsername(login));
     }
 
 
