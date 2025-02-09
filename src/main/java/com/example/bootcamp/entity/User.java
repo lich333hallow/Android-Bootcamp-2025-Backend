@@ -32,7 +32,7 @@ public class User implements UserDetails {
     @Column(name = "info")
     private String info;
 
-    @Column(name = "photoUrl")
+    @Column(name = "photoUrl", nullable = true)
     private String photoUrl;
 
     @ManyToMany(fetch = FetchType.EAGER)
