@@ -31,10 +31,10 @@
             <column name="password" type="varchar(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="info" type="varchar(300)">
+            <column name="info" type="varchar(1000)">
                 <constraints nullable="false"/>
             </column>
-            <column name="photo_url" type="varchar(300)">
+            <column name="photo_url" type="varchar(1000)">
                 <constraints nullable="false"/>
             </column>
             <column name="contact_id" type="BIGINT">

@@ -18,7 +18,7 @@ public class Contact {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "telegram_link")
+    @Column(name = "telegram_link", nullable = true)
     private String telegramLink;
 
     @OneToOne(mappedBy = "contact", cascade = CascadeType.ALL)
