@@ -27,10 +27,10 @@
             <column name="lon" type="float">
                 <constraints nullable="false"/>
             </column>
-            <column name="image_photo" type="varchar(300)">
+            <column name="image_photo" type="varchar(1000)">
                 <constraints nullable="false"/>
             </column>
-            <column name="info" type="varchar(300)">
+            <column name="info" type="varchar(1000)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
