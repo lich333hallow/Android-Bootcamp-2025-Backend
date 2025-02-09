@@ -22,5 +22,7 @@ public interface UserService {
 
     List<UserDTO> getUsersWithoutOrganization();
 
+    UserDTO findByEmail(String email);
+
     void deleteUser(Long id);
 }

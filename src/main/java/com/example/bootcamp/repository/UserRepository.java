@@ -1,5 +1,6 @@
 package com.example.bootcamp.repository;
 
+import com.example.bootcamp.entity.Contact;
 import com.example.bootcamp.entity.Organization;
 import com.example.bootcamp.entity.User;
 import org.springframework.data.domain.Page;
@@ -17,6 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);
 
     List<User> findByOrganization(Organization organization);
+
+    User findByContact(Contact contact);
 
     @Override
     Page<User> findAll(Pageable pageable);

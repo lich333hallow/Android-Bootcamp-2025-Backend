@@ -6,14 +6,15 @@ import com.example.bootcamp.entity.Authority;
 import com.example.bootcamp.entity.Contact;
 import com.example.bootcamp.entity.Organization;
 import com.example.bootcamp.entity.User;
+import com.example.bootcamp.exception.ContactNotFoundException;
 import com.example.bootcamp.exception.UserAlreadyExistsException;
 import com.example.bootcamp.exception.UserNotFoundException;
 import com.example.bootcamp.repository.AuthorityRepository;
+import com.example.bootcamp.repository.ContactRepository;
 import com.example.bootcamp.repository.OrganizationRepository;
 import com.example.bootcamp.repository.UserRepository;
 import com.example.bootcamp.service.UserService;
 import com.example.bootcamp.utils.UserMapper;
-import liquibase.pro.packaged.C;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +33,7 @@ public class UserServiceImpl implements UserService {
     private final OrganizationRepository organizationRepository;
     private final AuthorityRepository authorityRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ContactRepository contactRepository;
 
     @Override
     public List<UserDTO> getAllUsers() {
@@ -132,6 +134,16 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByOrganization(null).stream()
                 .map(UserMapper::convertToUserDTO)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public UserDTO findByEmail(String email) {
+        Contact contact = contactRepository.findByEmail(email);
+//        if(contact.isEmpty()){
+//            throw new ContactNotFoundException("Contact with " + email + " not found!");
+//        }
+        User user = userRepository.findByContact(contact);
+        return UserMapper.convertToUserDTO(user);
     }
 
     @Override

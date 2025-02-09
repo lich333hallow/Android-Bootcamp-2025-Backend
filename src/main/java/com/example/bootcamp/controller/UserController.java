@@ -4,6 +4,7 @@ import com.example.bootcamp.dto.UserDTO;
 import com.example.bootcamp.dto.UserRegisterDTO;
 import com.example.bootcamp.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -58,6 +59,12 @@ public class UserController {
     @GetMapping("/user/free")
     public ResponseEntity<List<UserDTO>> getUsersWithoutOrganization(){
         return ResponseEntity.ok(userService.getUsersWithoutOrganization());
+    }
+
+    @GetMapping("/user/by/{email}")
+    public ResponseEntity<UserDTO> getUserByEmail(@PathVariable String email){
+        System.out.println(email);
+        return ResponseEntity.ok(userService.findByEmail(email));
     }
 
 }

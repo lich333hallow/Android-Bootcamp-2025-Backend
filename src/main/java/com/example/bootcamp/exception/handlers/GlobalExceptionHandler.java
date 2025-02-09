@@ -1,9 +1,6 @@
 package com.example.bootcamp.exception.handlers;
 
-import com.example.bootcamp.exception.OrganizationAlreadyExistsException;
-import com.example.bootcamp.exception.OrganizationNotFoundException;
-import com.example.bootcamp.exception.UserAlreadyExistsException;
-import com.example.bootcamp.exception.UserNotFoundException;
+import com.example.bootcamp.exception.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -26,6 +23,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(OrganizationAlreadyExistsException.class)
     public ResponseEntity<String> handlerOrganizationAlreadyExistsException(OrganizationAlreadyExistsException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(ContactNotFoundException.class)
+    public ResponseEntity<String> handlerContactNotFoundException(ContactNotFoundException e){
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
